@@ -1,0 +1,31 @@
+// Set build triggers - run at 6am and 8pm, plus on code pushes, PRs, and merges
+triggers {
+    // Scheduled runs at 6am and 8pm
+    cron('0 6,20 * * *')
+    
+    // Run on code pushes
+    githubPush()
+    
+    // Run on pull requests
+    pullRequest {
+        events: ['OPEN', 'REOPENED', 'UPDATED']
+        triggerPhrase('run tests')
+        branchFilterType('PR_DESTINATION_BRANCH')
+        includedBranches(['main', 'develop', 'release/*'])
+    }
+    
+    // Run on merges to important branches
+    upstream(upstreamProjects: '', threshold: hudson.model.Result.SUCCESS)
+    GenericTrigger {
+        genericVariables {
+            [
+                [key: 'ref', value: '$.ref']
+            ]
+        }
+        causeString: 'Triggered by merge to branch $ref'
+        token: 'merge-trigger-token'
+        regexpFilterExpression: '^refs/heads/(main|develop|release/.*)$'
+        regexpFilterText: '$ref'
+    }
+}
+// ... existing code ...

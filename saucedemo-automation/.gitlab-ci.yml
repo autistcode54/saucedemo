@@ -1,0 +1,42 @@
+image: python:3.9
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+
+cache:
+  paths:
+    - .pip-cache
+    - venv/
+
+before_script:
+  - python -V
+  - python -m venv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+
+stages:
+  - test
+  - report
+
+test:
+  stage: test
+  script:
+    - robot --outputdir output --output output.xml --log log.html --report report.html tests/
+  artifacts:
+    when: always
+    paths:
+      - output/
+    expire_in: 1 week
+
+report:
+  stage: report
+  script:
+    - echo "Generating test report..."
+  artifacts:
+    when: always
+    paths:
+      - output/
+    expire_in: 1 week
+  only:
+    - main
+    - develop

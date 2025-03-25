@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T21:31:34.315498" rpa="false" schemaversion="5">
+<suite id="s1" name="Complete Purchase" source="C:\Users\Administrator\.cursor\tests\saucedemo-automation\tests\e2e\complete_purchase.robot">
+<kw name="Setup Test Environment" type="SETUP">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-03-25T21:31:34.781351" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Administrator\.cursor\tests\saucedemo-automation\output\screenshots"&gt;C:\Users\Administrator\.cursor\tests\saucedemo-automation\output\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-03-25T21:31:34.781066" elapsed="0.000368"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${MEDIUM_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-03-25T21:31:34.781633" elapsed="0.000256"/>
+</kw>
+<status status="PASS" start="2025-03-25T21:31:34.780118" elapsed="0.001864"/>
+</kw>
+<test id="s1-t1" name="Complete Purchase Happy Path" line="19">
+<kw name="Open Login Page" owner="login_page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-25T21:31:34.783165" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-03-25T21:31:35.201477" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.165); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-25T21:31:34.782963" elapsed="2.466160"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.249732" elapsed="0.049135"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.299458" elapsed="0.063401"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-25T21:31:37.367749" level="INFO">Current location is 'https://www.saucedemo.com/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.363145" elapsed="0.004700"/>
+</kw>
+<status status="PASS" start="2025-03-25T21:31:34.782688" elapsed="2.585269"/>
+</kw>
+<kw name="Login With Standard User" owner="login_page">
+<kw name="Login As User Type">
+<msg time="2025-03-25T21:31:37.371037" level="FAIL">No keyword with name 'Login As User Type' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
+<arg>standard</arg>
+<status status="FAIL" start="2025-03-25T21:31:37.370988" elapsed="0.000139">No keyword with name 'Login As User Type' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>inventory.html</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<arg>message=Failed to login as standard user</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-25T21:31:37.371334" elapsed="0.000054"/>
+</kw>
+<doc>Logs in with standard user credentials.</doc>
+<status status="FAIL" start="2025-03-25T21:31:37.368373" elapsed="0.003178">No keyword with name 'Login As User Type' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Verify Inventory Page Is Open" owner="inventory_page">
+<status status="NOT RUN" start="2025-03-25T21:31:37.371922" elapsed="0.000049"/>
+</kw>
+<kw name="Add Product To Cart" owner="inventory_page">
+<arg>Sauce Labs Backpack</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.372373" elapsed="0.000087"/>
+</kw>
+<kw name="Add Product To Cart" owner="inventory_page">
+<arg>Sauce Labs Bike Light</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.372846" elapsed="0.000059"/>
+</kw>
+<kw name="Add Product To Cart" owner="inventory_page">
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.373164" elapsed="0.000042"/>
+</kw>
+<kw name="Verify Cart Item Count">
+<arg>3</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.373478" elapsed="0.000071"/>
+</kw>
+<kw name="Remove Product From Cart" owner="inventory_page">
+<arg>Sauce Labs Backpack</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.374000" elapsed="0.000111"/>
+</kw>
+<kw name="Verify Cart Item Count">
+<arg>2</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.374942" elapsed="0.000232"/>
+</kw>
+<kw name="Open Cart" owner="inventory_page">
+<doc>Clicks the cart icon to navigate to the cart page.</doc>
+<status status="NOT RUN" start="2025-03-25T21:31:37.376504" elapsed="0.000148"/>
+</kw>
+<kw name="Proceed To Checkout" owner="cart_page">
+<doc>Clicks the "Checkout" button to proceed to the checkout page.</doc>
+<status status="NOT RUN" start="2025-03-25T21:31:37.377863" elapsed="0.000171"/>
+</kw>
+<kw name="Verify Checkout Step One Page Is Open">
+<status status="NOT RUN" start="2025-03-25T21:31:37.378495" elapsed="0.000036"/>
+</kw>
+<kw name="Fill Checkout Information" owner="checkout_page">
+<arg>${test_data['first_name']}</arg>
+<arg>${test_data['last_name']}</arg>
+<arg>${test_data['postal_code']}</arg>
+<status status="NOT RUN" start="2025-03-25T21:31:37.378745" elapsed="0.000035"/>
+</kw>
+<kw name="Continue To Overview" owner="checkout_page">
+<doc>Clicks the continue button to proceed to the checkout overview page.</doc>
+<status status="NOT RUN" start="2025-03-25T21:31:37.379158" elapsed="0.000039"/>
+</kw>
+<kw name="Verify Checkout Overview">
+<status status="NOT RUN" start="2025-03-25T21:31:37.379398" elapsed="0.000032"/>
+</kw>
+<kw name="Finish Checkout" owner="checkout_page">
+<doc>Clicks the finish button to complete the checkout process.</doc>
+<status status="NOT RUN" start="2025-03-25T21:31:37.379694" elapsed="0.000036"/>
+</kw>
+<kw name="Verify Order Complete">
+<status status="NOT RUN" start="2025-03-25T21:31:37.379915" elapsed="0.000031"/>
+</kw>
+<kw name="Capture Success Screenshot">
+<status status="NOT RUN" start="2025-03-25T21:31:37.380262" elapsed="0.000033"/>
+</kw>
+<kw name="Run Keyword If Test Failed" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Failed Screenshot">
+<kw name="Get Time" owner="BuiltIn">
+<msg time="2025-03-25T21:31:37.381333" level="INFO">${timestamp} = 1742934697</msg>
+<var>${timestamp}</var>
+<arg>epoch</arg>
+<doc>Returns the given time in the requested format.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.381113" elapsed="0.000255"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-25T21:31:37.543501" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../output/screenshots/FAIL_Complete%20Purchase%20Happy%20Path_1742934697.png"&gt;&lt;img src="../../output/screenshots/FAIL_Complete%20Purchase%20Happy%20Path_1742934697.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_DIR}/FAIL_${TEST NAME}_${timestamp}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.381495" elapsed="0.162289"/>
+</kw>
+<status status="PASS" start="2025-03-25T21:31:37.380833" elapsed="0.163171"/>
+</kw>
+<arg>Capture Failed Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.380619" elapsed="0.163521"/>
+</kw>
+<doc>E2E test for successful purchase flow</doc>
+<tag>e2e</tag>
+<tag>happy-path</tag>
+<status status="FAIL" start="2025-03-25T21:31:34.782061" elapsed="2.762672">No keyword with name 'Login As User Type' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-25T21:31:37.548273" elapsed="2.206951"/>
+</kw>
+<status status="FAIL" start="2025-03-25T21:31:34.317218" elapsed="5.438099"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">e2e</stat>
+<stat pass="0" fail="1" skip="0">happy-path</stat>
+</tag>
+<suite>
+<stat name="Complete Purchase" id="s1" pass="0" fail="1" skip="0">Complete Purchase</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-25T21:31:35.201477" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.165); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

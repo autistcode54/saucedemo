@@ -1,0 +1,33 @@
+# Core testing frameworks
+robotframework==6.1.1                 # Main testing framework
+robotframework-seleniumlibrary==6.1.0 # Browser automation
+robotframework-debuglibrary==2.3.0    # Debugging support
+
+# Web drivers and browser automation
+selenium==4.13.0                      # WebDriver implementation
+webdriver-manager==4.0.0              # WebDriver installation/management
+
+# Reporting and visualization
+robotframework-metrics==4.0.0         # Test metrics visualization
+robotframework-pabot==2.16.0          # Parallel test execution
+
+# Utilities and helpers
+robotframework-requests==0.9.5        # HTTP requests library
+pyyaml==6.0.1                         # YAML parsing (for config)
+python-dotenv==1.0.0                  # Environment variable management
+jsonschema==4.19.1                    # JSON validation for test data
+pytz==2023.3                          # Timezone handling for reports
+
+# Development tools
+flake8==6.1.0                         # Code linting
+black==23.9.1                         # Code formatting
+mypy==1.5.1                           # Static type checking
+pytest==7.4.2                         # Unit testing for Python components
+
+# Additional libraries for specific testing scenarios
+robotframework-databaselibrary==1.5.0 # For database testing and validation
+robotframework-jsonlibrary==0.5       # For JSON parsing and validation (used in inventory_page.robot)
+
+# Standard libraries used in the test suite
+robotframework-collections            # For dictionary and list operations (login_page.robot)
+robotframework-datetime               # For timestamp generation and date formatting

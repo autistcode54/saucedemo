@@ -1,0 +1,155 @@
+{
+    "schema_version": "1.0",
+    "last_updated": "2023-03-25",
+    "products": [
+        {
+            "id": "sauce-labs-backpack",
+            "name": "Sauce Labs Backpack",
+            "price": 29.99,
+            "description": "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.",
+            "image": "sauce-labs-backpack.jpg",
+            "department": "accessories",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["backpack", "bag", "accessory"]
+        },
+        {
+            "id": "sauce-labs-bike-light",
+            "name": "Sauce Labs Bike Light",
+            "price": 9.99,
+            "description": "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.",
+            "image": "sauce-labs-bike-light.jpg",
+            "department": "accessories",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["light", "bike", "accessory"]
+        },
+        {
+            "id": "sauce-labs-bolt-t-shirt",
+            "name": "Sauce Labs Bolt T-Shirt",
+            "price": 15.99,
+            "description": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
+            "image": "bolt-shirt-1200x1500.jpg",
+            "department": "clothing",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["shirt", "apparel", "clothing"]
+        },
+        {
+            "id": "sauce-labs-fleece-jacket",
+            "name": "Sauce Labs Fleece Jacket",
+            "price": 49.99,
+            "description": "It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.",
+            "image": "sauce-labs-fleece-jacket-1200x1500.jpg",
+            "department": "clothing",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["jacket", "fleece", "apparel", "clothing"]
+        },
+        {
+            "id": "sauce-labs-onesie",
+            "name": "Sauce Labs Onesie",
+            "price": 7.99,
+            "description": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
+            "image": "sauce-labs-onesie-1200x1500.jpg",
+            "department": "clothing",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["onesie", "baby", "apparel", "clothing"]
+        },
+        {
+            "id": "test.allthethings()-t-shirt-(red)",
+            "name": "Test.allTheThings() T-Shirt (Red)",
+            "price": 15.99,
+            "description": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
+            "image": "red-tatt-1200x1500.jpg",
+            "department": "clothing",
+            "expected_inventory": true,
+            "expected_cart_behavior": {
+                "can_add": true,
+                "can_remove": true
+            },
+            "tags": ["shirt", "red", "apparel", "clothing"]
+        }
+    ],
+    "test_scenarios": {
+        "sort_by_name_asc": [
+            "Sauce Labs Backpack",
+            "Sauce Labs Bike Light",
+            "Sauce Labs Bolt T-Shirt",
+            "Sauce Labs Fleece Jacket",
+            "Sauce Labs Onesie",
+            "Test.allTheThings() T-Shirt (Red)"
+        ],
+        "sort_by_name_desc": [
+            "Test.allTheThings() T-Shirt (Red)",
+            "Sauce Labs Onesie",
+            "Sauce Labs Fleece Jacket",
+            "Sauce Labs Bolt T-Shirt",
+            "Sauce Labs Bike Light",
+            "Sauce Labs Backpack"
+        ],
+        "sort_by_price_asc": [
+            "Sauce Labs Onesie",
+            "Sauce Labs Bike Light",
+            "Sauce Labs Bolt T-Shirt",
+            "Test.allTheThings() T-Shirt (Red)",
+            "Sauce Labs Backpack",
+            "Sauce Labs Fleece Jacket"
+        ],
+        "sort_by_price_desc": [
+            "Sauce Labs Fleece Jacket",
+            "Sauce Labs Backpack",
+            "Sauce Labs Bolt T-Shirt",
+            "Test.allTheThings() T-Shirt (Red)",
+            "Sauce Labs Bike Light",
+            "Sauce Labs Onesie"
+        ]
+    },
+    "user_expectations": {
+        "standard_user": {
+            "can_view_products": true,
+            "can_add_to_cart": true,
+            "can_checkout": true
+        },
+        "locked_out_user": {
+            "can_view_products": false,
+            "can_add_to_cart": false,
+            "can_checkout": false
+        },
+        "problem_user": {
+            "can_view_products": true,
+            "can_add_to_cart": true,
+            "can_checkout": false,
+            "known_issues": [
+                "Product images may be incorrect",
+                "Sort functionality may not work",
+                "Cannot complete checkout due to lastname field issue"
+            ]
+        },
+        "performance_glitch_user": {
+            "can_view_products": true,
+            "can_add_to_cart": true,
+            "can_checkout": true,
+            "expected_delays": {
+                "page_load": "2-5 seconds",
+                "add_to_cart": "1-3 seconds"
+            }
+        }
+    }
+}
