@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains an end-to-end automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application. The framework is built using Robot Framework and Python, with a focus on maintainability, reusability, and data-driven testing. AI used in this project VSCode Copilot + Cursor with Deepseek r1 and Claude for debugging + Gemini 2.0.
+This repository contains an end-to-end automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application. The framework is built using Robot Framework and Python, with a focus on maintainability, reusability, and data-driven testing. AI used in this project VSCode Copilot + Cursor with Deepseek r1 and Claude for debugging + Gemini 2.0. About 35 % time saved with AI.
 
 ## Project Structure
 
