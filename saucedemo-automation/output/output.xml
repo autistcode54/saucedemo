@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T22:28:36.336779" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-04T11:26:40.485087" rpa="false" schemaversion="5">
 <suite id="s1" name="Complete Purchase" source="C:\Users\Administrator\.cursor\tests\saucedemo-automation\tests\e2e\complete_purchase.robot">
-<test id="s1-t1" name="Complete Purchase Happy Path" line="20">
+<test id="s1-t1" name="Complete Purchase Happy Path" line="27">
 <kw name="Begin Test" type="SETUP">
 <kw name="Open Login Page" owner="login_page">
 <try>
 <branch type="TRY">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:36.992971" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<msg time="2025-03-25T22:28:37.471961" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.165); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-04-04T11:26:41.050454" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-04-04T11:26:41.466963" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.178); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T22:28:36.992714" elapsed="2.349500"/>
+<status status="PASS" start="2025-04-04T11:26:41.050201" elapsed="2.112154"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.342876" elapsed="0.046316"/>
+<status status="PASS" start="2025-04-04T11:26:43.162726" elapsed="0.058149"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGIN_BUTTON}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.389558" elapsed="0.071641"/>
+<status status="PASS" start="2025-04-04T11:26:43.221812" elapsed="0.083512"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:39.472981" level="INFO">Current location is 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-04-04T11:26:43.319427" level="INFO">Current location is 'https://www.saucedemo.com/'.</msg>
 <arg>${LOGIN_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.461581" elapsed="0.011858"/>
+<status status="PASS" start="2025-04-04T11:26:43.305807" elapsed="0.013801"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:39.474180" level="INFO">Login page opened successfully</msg>
+<msg time="2025-04-04T11:26:43.320235" level="INFO">Login page opened successfully</msg>
 <arg>Login page opened successfully</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.473815" elapsed="0.000497"/>
+<status status="PASS" start="2025-04-04T11:26:43.319941" elapsed="0.000402"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:36.991982" elapsed="2.482466"/>
+<status status="PASS" start="2025-04-04T11:26:41.049467" elapsed="2.270980"/>
 </branch>
 <branch type="EXCEPT" assign="${error}">
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to open login page: ${error}</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:39.474924" elapsed="0.000071"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.320855" elapsed="0.000078"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:39.475313" elapsed="0.000071"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.321224" elapsed="0.000065"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not open login page: ${error}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:39.475666" elapsed="0.000071"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.321525" elapsed="0.000070"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:39.474623" elapsed="0.001225"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.320596" elapsed="0.001096"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:36.991935" elapsed="2.484049"/>
+<status status="PASS" start="2025-04-04T11:26:41.049416" elapsed="2.272400"/>
 </try>
 <doc>Opens the login page in a browser.
 Opens the default browser, navigates to the login URL,
 and verifies the page has loaded correctly.</doc>
-<status status="PASS" start="2025-03-25T22:28:36.991737" elapsed="2.484395"/>
+<status status="PASS" start="2025-04-04T11:26:41.049220" elapsed="2.272759"/>
 </kw>
 <kw name="Login As User Type" owner="login_page">
 <try>
 <branch type="TRY">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:39.478550" level="INFO">Logging in as user type: standard_user</msg>
+<msg time="2025-04-04T11:26:43.324090" level="INFO">Logging in as user type: standard_user</msg>
 <arg>Logging in as user type: ${user_type}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.478053" elapsed="0.000674"/>
+<status status="PASS" start="2025-04-04T11:26:43.323302" elapsed="0.001128"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Set Variable" owner="BuiltIn">
 <arg>${standard_user}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.479999" elapsed="0.000326"/>
+<status status="PASS" start="2025-04-04T11:26:43.327158" elapsed="0.000865"/>
 </kw>
-<msg time="2025-03-25T22:28:39.480603" level="INFO">${user_data} = {'username': 'standard_user', 'password': 'secret_sauce'}</msg>
+<msg time="2025-04-04T11:26:43.328762" level="INFO">${user_data} = {'username': 'standard_user', 'password': 'secret_sauce'}</msg>
 <var>${user_data}</var>
 <arg>"${user_type}" == "standard_user"</arg>
 <arg>Set Variable</arg>
@@ -109,108 +109,108 @@ and verifies the page has loaded correctly.</doc>
 <arg>Fail</arg>
 <arg>Unknown user type: ${user_type}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.479218" elapsed="0.001459"/>
+<status status="PASS" start="2025-04-04T11:26:43.325263" elapsed="0.003667"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-25T22:28:39.481654" level="INFO">${username} = standard_user</msg>
+<msg time="2025-04-04T11:26:43.330607" level="INFO">${username} = standard_user</msg>
 <var>${username}</var>
 <arg>${user_data}[username]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.481198" elapsed="0.000640"/>
+<status status="PASS" start="2025-04-04T11:26:43.330190" elapsed="0.000469"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-25T22:28:39.483572" level="INFO">${password} = secret_sauce</msg>
+<msg time="2025-04-04T11:26:43.331278" level="INFO">${password} = secret_sauce</msg>
 <var>${password}</var>
 <arg>${user_data}[password]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.482340" elapsed="0.001377"/>
+<status status="PASS" start="2025-04-04T11:26:43.331004" elapsed="0.000311"/>
 </kw>
 <kw name="Login With Credentials" owner="login_page">
 <try>
 <branch type="TRY">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:39.492108" level="INFO">Typing text 'standard_user' into text field 'css:[data-test="username"]'.</msg>
+<msg time="2025-04-04T11:26:43.332373" level="INFO">Typing text 'standard_user' into text field 'css:[data-test="username"]'.</msg>
 <arg>${USERNAME_FIELD}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.490812" elapsed="0.286504"/>
+<status status="PASS" start="2025-04-04T11:26:43.332113" elapsed="0.191048"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:39.779020" level="INFO">Typing password into text field 'css:[data-test="password"]'.</msg>
-<msg time="2025-03-25T22:28:39.842021" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-04-04T11:26:43.524127" level="INFO">Typing password into text field 'css:[data-test="password"]'.</msg>
+<msg time="2025-04-04T11:26:43.555585" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${PASSWORD_FIELD}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.778033" elapsed="0.122638"/>
+<status status="PASS" start="2025-04-04T11:26:43.523540" elapsed="0.092690"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:39.901220" level="INFO">Clicking element 'css:[data-test="login-button"]'.</msg>
+<msg time="2025-04-04T11:26:43.616669" level="INFO">Clicking element 'css:[data-test="login-button"]'.</msg>
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.900924" elapsed="0.150368"/>
+<status status="PASS" start="2025-04-04T11:26:43.616446" elapsed="0.126548"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.051807" level="INFO">Login attempted with username: standard_user</msg>
+<msg time="2025-04-04T11:26:43.743726" level="INFO">Login attempted with username: standard_user</msg>
 <arg>Login attempted with username: ${username}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.051530" elapsed="0.000344"/>
+<status status="PASS" start="2025-04-04T11:26:43.743353" elapsed="0.000478"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:39.489905" elapsed="0.562039"/>
+<status status="PASS" start="2025-04-04T11:26:43.331983" elapsed="0.411979"/>
 </branch>
 <branch type="EXCEPT" assign="${error}">
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to login with credentials: ${error}</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.052277" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.744432" elapsed="0.000094"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.052952" elapsed="0.000130"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.745215" elapsed="0.000108"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not login with provided credentials: ${error}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.053426" elapsed="0.000072"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.745634" elapsed="0.000086"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.052070" elapsed="0.001533"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.744122" elapsed="0.001729"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:39.489095" elapsed="0.564651"/>
+<status status="PASS" start="2025-04-04T11:26:43.331916" elapsed="0.414094"/>
 </try>
 <arg>${username}</arg>
 <arg>${password}</arg>
 <doc>Logs in using the provided username and password.</doc>
-<status status="PASS" start="2025-03-25T22:28:39.485769" elapsed="0.568142"/>
+<status status="PASS" start="2025-04-04T11:26:43.331609" elapsed="0.414623"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Get User Expectations" owner="TestDataLib">
 <arg>${user_type}</arg>
 <doc>Get expected behaviors for user type.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.054739" elapsed="0.000424"/>
+<status status="PASS" start="2025-04-04T11:26:43.747145" elapsed="0.000504"/>
 </kw>
-<msg time="2025-03-25T22:28:40.055458" level="INFO">${expectations_exist} = True</msg>
+<msg time="2025-04-04T11:26:43.747980" level="INFO">${expectations_exist} = True</msg>
 <var>${expectations_exist}</var>
 <arg>Get User Expectations</arg>
 <arg>${user_type}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.054287" elapsed="0.001243"/>
+<status status="PASS" start="2025-04-04T11:26:43.746655" elapsed="0.001396"/>
 </kw>
 <if>
 <branch type="IF" condition="${expectations_exist}">
 <kw name="Get User Expectations" owner="TestDataLib">
-<msg time="2025-03-25T22:28:40.056578" level="INFO">${expectations} = {'can_view_products': True, 'can_add_to_cart': True, 'can_checkout': True}</msg>
+<msg time="2025-04-04T11:26:43.749217" level="INFO">${expectations} = {'can_view_products': True, 'can_add_to_cart': True, 'can_checkout': True}</msg>
 <var>${expectations}</var>
 <arg>${user_type}</arg>
 <doc>Get expected behaviors for user type.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.056214" elapsed="0.000438"/>
+<status status="PASS" start="2025-04-04T11:26:43.748786" elapsed="0.000533"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.057284" level="INFO">${can_view} = True</msg>
+<msg time="2025-04-04T11:26:43.750133" level="INFO">${can_view} = True</msg>
 <var>${can_view}</var>
 <arg>${expectations}[can_view_products]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.056924" elapsed="0.000426"/>
+<status status="PASS" start="2025-04-04T11:26:43.749719" elapsed="0.000475"/>
 </kw>
 <if>
 <branch type="IF" condition="${can_view}">
@@ -219,13 +219,13 @@ and verifies the page has loaded correctly.</doc>
 <arg>timeout=${TIMEOUT}</arg>
 <arg>message=Failed to login as ${user_type}</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.057998" elapsed="0.010889"/>
+<status status="PASS" start="2025-04-04T11:26:43.750821" elapsed="0.006565"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.057546" elapsed="0.011556"/>
+<status status="PASS" start="2025-04-04T11:26:43.750469" elapsed="0.007124"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.057501" elapsed="0.011752"/>
+<status status="PASS" start="2025-04-04T11:26:43.750421" elapsed="0.007310"/>
 </if>
-<status status="PASS" start="2025-03-25T22:28:40.055798" elapsed="0.013540"/>
+<status status="PASS" start="2025-04-04T11:26:43.748356" elapsed="0.009467"/>
 </branch>
 <branch type="ELSE">
 <if>
@@ -235,51 +235,51 @@ and verifies the page has loaded correctly.</doc>
 <arg>timeout=${TIMEOUT}</arg>
 <arg>message=Failed to login as ${user_type}</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.070008" elapsed="0.000075"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.758446" elapsed="0.000106"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.069657" elapsed="0.000585"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.758106" elapsed="0.000592"/>
 </branch>
 <branch type="ELSE">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${ERROR_MESSAGE}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.070652" elapsed="0.000069"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.759112" elapsed="0.000061"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.070359" elapsed="0.000469"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.758797" elapsed="0.000476"/>
 </branch>
-<status status="NOT RUN" start="2025-03-25T22:28:40.069612" elapsed="0.001293"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.758061" elapsed="0.001293"/>
 </if>
-<status status="NOT RUN" start="2025-03-25T22:28:40.069449" elapsed="0.001530"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.757922" elapsed="0.001498"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.055737" elapsed="0.015314"/>
+<status status="PASS" start="2025-04-04T11:26:43.748279" elapsed="0.011211"/>
 </if>
-<status status="PASS" start="2025-03-25T22:28:39.477708" elapsed="0.593400"/>
+<status status="PASS" start="2025-04-04T11:26:43.322968" elapsed="0.436593"/>
 </branch>
 <branch type="EXCEPT" assign="${error}">
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to login as ${user_type} user: ${error}</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.071460" elapsed="0.000065"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.760035" elapsed="0.000071"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.071789" elapsed="0.000055"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.760406" elapsed="0.000052"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not login as ${user_type} user: ${error}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.072060" elapsed="0.000054"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.760664" elapsed="0.000051"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.071227" elapsed="0.000988"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.759692" elapsed="0.001105"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:39.477608" elapsed="0.594715"/>
+<status status="PASS" start="2025-04-04T11:26:43.322907" elapsed="0.437985"/>
 </try>
 <arg>${TEST_USER}</arg>
 <doc>Logs in as a specific user type defined in credentials.py.
 Available user types: standard, locked, problem, performance, error, visual</doc>
-<status status="PASS" start="2025-03-25T22:28:39.476968" elapsed="0.595499"/>
+<status status="PASS" start="2025-04-04T11:26:43.322563" elapsed="0.438467"/>
 </kw>
 <kw name="Verify Inventory Page Is Open" owner="inventory_page">
 <try>
@@ -288,195 +288,195 @@ Available user types: standard, locked, problem, performance, error, visual</doc
 <arg>${INVENTORY_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.073702" elapsed="0.005766"/>
+<status status="PASS" start="2025-04-04T11:26:43.762095" elapsed="0.005406"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.097316" level="INFO">Current page contains element 'xpath://span[text()='Products']'.</msg>
+<msg time="2025-04-04T11:26:43.786678" level="INFO">Current page contains element 'xpath://span[text()='Products']'.</msg>
 <arg>xpath://span[text()='Products']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.079845" elapsed="0.017589"/>
+<status status="PASS" start="2025-04-04T11:26:43.767774" elapsed="0.019013"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.097971" level="INFO">Inventory page is open successfully</msg>
+<msg time="2025-04-04T11:26:43.787215" level="INFO">Inventory page is open successfully</msg>
 <arg>Inventory page is open successfully</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.097657" elapsed="0.000401"/>
+<status status="PASS" start="2025-04-04T11:26:43.787027" elapsed="0.000280"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.073459" elapsed="0.024677"/>
+<status status="PASS" start="2025-04-04T11:26:43.761918" elapsed="0.025481"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.098557" elapsed="0.000047"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.787660" elapsed="0.000043"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to verify inventory page is open</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.098771" elapsed="0.000040"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.787855" elapsed="0.000035"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Inventory page is not open</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.098982" elapsed="0.000267"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.788030" elapsed="0.000032"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.098239" elapsed="0.001197"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.787501" elapsed="0.000613"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.073389" elapsed="0.026346"/>
+<status status="PASS" start="2025-04-04T11:26:43.761863" elapsed="0.026302"/>
 </try>
 <doc>Verifies that the inventory page is loaded and accessible.
 Checks for the presence of product titles and validates the URL.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.072970" elapsed="0.027145"/>
+<status status="PASS" start="2025-04-04T11:26:43.761469" elapsed="0.026767"/>
 </kw>
 <doc>Test setup - opens the browser and logs in</doc>
-<status status="PASS" start="2025-03-25T22:28:36.991190" elapsed="3.109271"/>
+<status status="PASS" start="2025-04-04T11:26:41.048647" elapsed="2.739675"/>
 </kw>
 <kw name="Get User Expectations" owner="TestDataLib">
-<msg time="2025-03-25T22:28:40.101638" level="INFO">${user_expectations} = {'can_view_products': True, 'can_add_to_cart': True, 'can_checkout': True}</msg>
+<msg time="2025-04-04T11:26:43.789263" level="INFO">${user_expectations} = {'can_view_products': True, 'can_add_to_cart': True, 'can_checkout': True}</msg>
 <var>${user_expectations}</var>
 <arg>${TEST_USER}</arg>
 <doc>Get expected behaviors for user type.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.101195" elapsed="0.000653"/>
+<status status="PASS" start="2025-04-04T11:26:43.788784" elapsed="0.000669"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.102489" level="INFO">Testing with user: standard_user</msg>
+<msg time="2025-04-04T11:26:43.790367" level="INFO">Testing with user: standard_user</msg>
 <arg>Testing with user: ${TEST_USER}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.102232" elapsed="0.000323"/>
+<status status="PASS" start="2025-04-04T11:26:43.789959" elapsed="0.000721"/>
 </kw>
 <kw name="User Should Be Able To Checkout" owner="TestDataLib">
 <arg>${TEST_USER}</arg>
 <doc>Verify if user type should be able to checkout.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.102830" elapsed="0.000191"/>
+<status status="PASS" start="2025-04-04T11:26:43.791454" elapsed="0.000449"/>
 </kw>
 <kw name="Get Product Data" owner="TestDataLib">
-<msg time="2025-03-25T22:28:40.103495" level="INFO">${product} = {'id': 'sauce-labs-backpack', 'name': 'Sauce Labs Backpack', 'price': 29.99, 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled la...</msg>
+<msg time="2025-04-04T11:26:43.793071" level="INFO">${product} = {'id': 'sauce-labs-backpack', 'name': 'Sauce Labs Backpack', 'price': 29.99, 'description': 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled la...</msg>
 <var>${product}</var>
 <arg>${TEST_PRODUCT}</arg>
 <doc>Get product data by name.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.103257" elapsed="0.000279"/>
+<status status="PASS" start="2025-04-04T11:26:43.792738" elapsed="0.000376"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.104033" level="INFO">Testing with product: Sauce Labs Backpack ($29.99)</msg>
+<msg time="2025-04-04T11:26:43.793786" level="INFO">Testing with product: Sauce Labs Backpack ($29.99)</msg>
 <arg>Testing with product: ${TEST_PRODUCT} ($${product}[price])</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.103798" elapsed="0.000297"/>
+<status status="PASS" start="2025-04-04T11:26:43.793507" elapsed="0.000345"/>
 </kw>
 <kw name="Add Product To Cart" owner="inventory_page">
 <try>
 <branch type="TRY">
 <kw name="Get Product Id By Name" owner="TestDataLib">
-<msg time="2025-03-25T22:28:40.105383" level="INFO">${product_id} = sauce-labs-backpack</msg>
+<msg time="2025-04-04T11:26:43.795035" level="INFO">${product_id} = sauce-labs-backpack</msg>
 <var>${product_id}</var>
 <arg>${product_name}</arg>
 <doc>Get product ID by name.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.105160" elapsed="0.000265"/>
+<status status="PASS" start="2025-04-04T11:26:43.794812" elapsed="0.000259"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.105802" level="INFO">${button_locator} = id=add-to-cart-sauce-labs-backpack</msg>
+<msg time="2025-04-04T11:26:43.795443" level="INFO">${button_locator} = id=add-to-cart-sauce-labs-backpack</msg>
 <var>${button_locator}</var>
 <arg>id=add-to-cart-${product_id}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.105581" elapsed="0.000258"/>
+<status status="PASS" start="2025-04-04T11:26:43.795229" elapsed="0.000252"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${button_locator}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.106000" elapsed="0.023632"/>
+<status status="PASS" start="2025-04-04T11:26:43.795723" elapsed="0.024446"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.130131" level="INFO">Clicking element 'id=add-to-cart-sauce-labs-backpack'.</msg>
+<msg time="2025-04-04T11:26:43.821019" level="INFO">Clicking element 'id=add-to-cart-sauce-labs-backpack'.</msg>
 <arg>${button_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.129869" elapsed="0.075182"/>
+<status status="PASS" start="2025-04-04T11:26:43.820589" elapsed="0.088760"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.205562" level="INFO">Added "Sauce Labs Backpack" to cart</msg>
+<msg time="2025-04-04T11:26:43.910036" level="INFO">Added "Sauce Labs Backpack" to cart</msg>
 <arg>Added "${product_name}" to cart</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.205287" elapsed="0.000339"/>
+<status status="PASS" start="2025-04-04T11:26:43.909716" elapsed="0.000421"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.105014" elapsed="0.100674"/>
+<status status="PASS" start="2025-04-04T11:26:43.794668" elapsed="0.115545"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.205928" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.910535" elapsed="0.000051"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to add product "${product_name}" to cart</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.206107" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.910727" elapsed="0.000033"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not add product to cart</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.206256" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.910877" elapsed="0.000030"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.205771" elapsed="0.000559"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.910298" elapsed="0.000674"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.104969" elapsed="0.101412"/>
+<status status="PASS" start="2025-04-04T11:26:43.794628" elapsed="0.116404"/>
 </try>
 <arg>${TEST_PRODUCT}</arg>
 <doc>Adds a specified product to the shopping cart by name.
 Converts the product name to a URL-friendly format and clicks the add button.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.104609" elapsed="0.101852"/>
+<status status="PASS" start="2025-04-04T11:26:43.794335" elapsed="0.116771"/>
 </kw>
 <kw name="Get Cart Count" owner="inventory_page">
 <try>
 <branch type="TRY">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.233104" level="INFO">${count} = 1</msg>
+<msg time="2025-04-04T11:26:43.942830" level="INFO">${count} = 1</msg>
 <var>${count}</var>
 <arg>${CART_BADGE}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.207696" elapsed="0.025677"/>
+<status status="PASS" start="2025-04-04T11:26:43.912434" elapsed="0.030449"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.235031" level="INFO">Cart count is 1</msg>
+<msg time="2025-04-04T11:26:43.943342" level="INFO">Cart count is 1</msg>
 <arg>Cart count is ${count}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.234478" elapsed="0.000704"/>
+<status status="PASS" start="2025-04-04T11:26:43.943101" elapsed="0.000317"/>
 </kw>
 <return>
 <value>${count}</value>
-<status status="PASS" start="2025-03-25T22:28:40.235300" elapsed="0.000086"/>
+<status status="PASS" start="2025-04-04T11:26:43.943525" elapsed="0.000073"/>
 </return>
-<status status="PASS" start="2025-03-25T22:28:40.207548" elapsed="0.027914"/>
+<status status="PASS" start="2025-04-04T11:26:43.912285" elapsed="0.031376"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Log" owner="BuiltIn">
 <arg>Cart badge not visible, returning 0</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.236076" elapsed="0.000095"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.943884" elapsed="0.000034"/>
 </kw>
 <return>
 <value>0</value>
-<status status="NOT RUN" start="2025-03-25T22:28:40.236412" elapsed="0.000078"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.943981" elapsed="0.000028"/>
 </return>
-<status status="NOT RUN" start="2025-03-25T22:28:40.235636" elapsed="0.000959"/>
+<status status="NOT RUN" start="2025-04-04T11:26:43.943727" elapsed="0.000327"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.207485" elapsed="0.029192"/>
+<status status="PASS" start="2025-04-04T11:26:43.912209" elapsed="0.031893"/>
 </try>
-<msg time="2025-03-25T22:28:40.236845" level="INFO">${cart_count} = 1</msg>
+<msg time="2025-04-04T11:26:43.944264" level="INFO">${cart_count} = 1</msg>
 <var>${cart_count}</var>
 <doc>Returns the current number of items in the shopping cart.
 Returns 0 if the cart is empty (badge not visible).</doc>
-<status status="PASS" start="2025-03-25T22:28:40.207196" elapsed="0.029684"/>
+<status status="PASS" start="2025-04-04T11:26:43.911823" elapsed="0.032481"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${cart_count}</arg>
 <arg>1</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.237243" elapsed="0.000290"/>
+<status status="PASS" start="2025-04-04T11:26:43.944708" elapsed="0.000373"/>
 </kw>
 <kw name="Open Cart" owner="inventory_page">
 <try>
@@ -485,45 +485,45 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${CART_LINK}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.238547" elapsed="0.017032"/>
+<status status="PASS" start="2025-04-04T11:26:43.946280" elapsed="0.023632"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.256046" level="INFO">Clicking element 'css:.shopping_cart_link'.</msg>
+<msg time="2025-04-04T11:26:43.970381" level="INFO">Clicking element 'css:.shopping_cart_link'.</msg>
 <arg>${CART_LINK}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.255794" elapsed="0.116962"/>
+<status status="PASS" start="2025-04-04T11:26:43.970159" elapsed="0.086301"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.373369" level="INFO">Opened cart page</msg>
+<msg time="2025-04-04T11:26:44.057008" level="INFO">Opened cart page</msg>
 <arg>Opened cart page</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.373067" elapsed="0.000414"/>
+<status status="PASS" start="2025-04-04T11:26:44.056787" elapsed="0.000283"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.238406" elapsed="0.135252"/>
+<status status="PASS" start="2025-04-04T11:26:43.946148" elapsed="0.111017"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.374062" elapsed="0.000060"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.057735" elapsed="0.000078"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to open cart page</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.374326" elapsed="0.000054"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.058198" elapsed="0.000122"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not open cart</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.374844" elapsed="0.000049"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.059914" elapsed="0.000142"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.373792" elapsed="0.001165"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.057426" elapsed="0.002728"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.238362" elapsed="0.136680"/>
+<status status="PASS" start="2025-04-04T11:26:43.946111" elapsed="0.114215"/>
 </try>
 <doc>Navigates to the cart page by clicking the cart icon.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.238118" elapsed="0.137021"/>
+<status status="PASS" start="2025-04-04T11:26:43.945855" elapsed="0.114651"/>
 </kw>
 <kw name="Verify Product In Cart" owner="cart_page">
 <try>
@@ -532,50 +532,50 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>xpath://div[text()='${product_name}']</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.377626" elapsed="0.023979"/>
+<status status="PASS" start="2025-04-04T11:26:44.061951" elapsed="0.026656"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.409749" level="INFO">Current page contains element 'xpath://div[text()='Sauce Labs Backpack']'.</msg>
+<msg time="2025-04-04T11:26:44.098069" level="INFO">Current page contains element 'xpath://div[text()='Sauce Labs Backpack']'.</msg>
 <arg>xpath://div[text()='${product_name}']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.402517" elapsed="0.007358"/>
+<status status="PASS" start="2025-04-04T11:26:44.088811" elapsed="0.009361"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.410275" level="INFO">Product "Sauce Labs Backpack" is in cart</msg>
+<msg time="2025-04-04T11:26:44.098560" level="INFO">Product "Sauce Labs Backpack" is in cart</msg>
 <arg>Product "${product_name}" is in cart</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.410056" elapsed="0.000274"/>
+<status status="PASS" start="2025-04-04T11:26:44.098356" elapsed="0.000259"/>
 </kw>
 <return>
 <value>${TRUE}</value>
-<status status="PASS" start="2025-03-25T22:28:40.410400" elapsed="0.000055"/>
+<status status="PASS" start="2025-04-04T11:26:44.098688" elapsed="0.000053"/>
 </return>
-<status status="PASS" start="2025-03-25T22:28:40.377414" elapsed="0.033094"/>
+<status status="PASS" start="2025-04-04T11:26:44.061764" elapsed="0.037031"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.410701" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.099001" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Product "${product_name}" not found in cart</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.410845" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.099150" elapsed="0.000032"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Product not found in cart</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.410986" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.099301" elapsed="0.000031"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.410573" elapsed="0.000487"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.098861" elapsed="0.000519"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.377349" elapsed="0.033760"/>
+<status status="PASS" start="2025-04-04T11:26:44.061721" elapsed="0.037713"/>
 </try>
 <arg>${TEST_PRODUCT}</arg>
 <doc>Verifies a specific product is present in the cart</doc>
-<status status="PASS" start="2025-03-25T22:28:40.375947" elapsed="0.035268"/>
+<status status="PASS" start="2025-04-04T11:26:44.061238" elapsed="0.038304"/>
 </kw>
 <kw name="Proceed To Checkout" owner="cart_page">
 <try>
@@ -584,45 +584,45 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${CHECKOUT_BUTTON}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.411962" elapsed="0.016898"/>
+<status status="PASS" start="2025-04-04T11:26:44.100335" elapsed="0.021080"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.429368" level="INFO">Clicking element 'css:[data-test="checkout"]'.</msg>
+<msg time="2025-04-04T11:26:44.121859" level="INFO">Clicking element 'css:[data-test="checkout"]'.</msg>
 <arg>${CHECKOUT_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.429113" elapsed="0.064893"/>
+<status status="PASS" start="2025-04-04T11:26:44.121624" elapsed="0.081057"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.494426" level="INFO">Proceeding to checkout</msg>
+<msg time="2025-04-04T11:26:44.203082" level="INFO">Proceeding to checkout</msg>
 <arg>Proceeding to checkout</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.494258" elapsed="0.000225"/>
+<status status="PASS" start="2025-04-04T11:26:44.202898" elapsed="0.000241"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.411847" elapsed="0.082695"/>
+<status status="PASS" start="2025-04-04T11:26:44.100223" elapsed="0.102978"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.494745" elapsed="0.000052"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.203422" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to proceed to checkout</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.494950" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.203573" elapsed="0.000031"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not proceed to checkout</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.495097" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.203729" elapsed="0.000032"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.494616" elapsed="0.000554"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.203276" elapsed="0.000533"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.411813" elapsed="0.083414"/>
+<status status="PASS" start="2025-04-04T11:26:44.100191" elapsed="0.103671"/>
 </try>
 <doc>Clicks the checkout button to proceed with checkout</doc>
-<status status="PASS" start="2025-03-25T22:28:40.411609" elapsed="0.083688"/>
+<status status="PASS" start="2025-04-04T11:26:44.099994" elapsed="0.103934"/>
 </kw>
 <kw name="Fill Checkout Information" owner="checkout_page">
 <try>
@@ -631,63 +631,63 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${FIRST_NAME_FIELD}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.496534" elapsed="0.036812"/>
+<status status="PASS" start="2025-04-04T11:26:44.205660" elapsed="0.024464"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.534750" level="INFO">Typing text 'John' into text field 'css:[data-test="firstName"]'.</msg>
+<msg time="2025-04-04T11:26:44.230608" level="INFO">Typing text 'John' into text field 'css:[data-test="firstName"]'.</msg>
 <arg>${FIRST_NAME_FIELD}</arg>
 <arg>${first_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.533999" elapsed="0.119861"/>
+<status status="PASS" start="2025-04-04T11:26:44.230337" elapsed="0.109076"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.654684" level="INFO">Typing text 'Doe' into text field 'css:[data-test="lastName"]'.</msg>
+<msg time="2025-04-04T11:26:44.339927" level="INFO">Typing text 'Doe' into text field 'css:[data-test="lastName"]'.</msg>
 <arg>${LAST_NAME_FIELD}</arg>
 <arg>${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.654100" elapsed="0.085697"/>
+<status status="PASS" start="2025-04-04T11:26:44.339675" elapsed="0.095748"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.740385" level="INFO">Typing text '12345' into text field 'css:[data-test="postalCode"]'.</msg>
+<msg time="2025-04-04T11:26:44.435913" level="INFO">Typing text '12345' into text field 'css:[data-test="postalCode"]'.</msg>
 <arg>${POSTAL_CODE_FIELD}</arg>
 <arg>${postal_code}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.740042" elapsed="0.137395"/>
+<status status="PASS" start="2025-04-04T11:26:44.435654" elapsed="0.094048"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:40.878365" level="INFO">Filled checkout information: John Doe, 12345</msg>
+<msg time="2025-04-04T11:26:44.530554" level="INFO">Filled checkout information: John Doe, 12345</msg>
 <arg>Filled checkout information: ${first_name} ${last_name}, ${postal_code}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.877731" elapsed="0.000711"/>
+<status status="PASS" start="2025-04-04T11:26:44.530283" elapsed="0.000334"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.496385" elapsed="0.382137"/>
+<status status="PASS" start="2025-04-04T11:26:44.205220" elapsed="0.325458"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.879008" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.530922" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to fill checkout information</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.879205" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.531068" elapsed="0.000031"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not fill checkout information</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:40.879364" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.531213" elapsed="0.000029"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:40.878676" elapsed="0.000780"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.530773" elapsed="0.000514"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.496339" elapsed="0.383244"/>
+<status status="PASS" start="2025-04-04T11:26:44.205068" elapsed="0.326406"/>
 </try>
 <arg>John</arg>
 <arg>Doe</arg>
 <arg>12345</arg>
 <doc>Fills out the checkout information form</doc>
-<status status="PASS" start="2025-03-25T22:28:40.496004" elapsed="0.383660"/>
+<status status="PASS" start="2025-04-04T11:26:44.204490" elapsed="0.327100"/>
 </kw>
 <kw name="Continue To Overview" owner="checkout_page">
 <try>
@@ -696,88 +696,88 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${CONTINUE_BUTTON}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.880637" elapsed="0.021183"/>
+<status status="PASS" start="2025-04-04T11:26:44.532490" elapsed="0.021939"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:40.902363" level="INFO">Clicking element 'css:[data-test="continue"]'.</msg>
+<msg time="2025-04-04T11:26:44.554880" level="INFO">Clicking element 'css:[data-test="continue"]'.</msg>
 <arg>${CONTINUE_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.902086" elapsed="0.071715"/>
+<status status="PASS" start="2025-04-04T11:26:44.554633" elapsed="0.091269"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.142144" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-25T22:28:41.142393" level="FAIL">Page should have contained element 'css:[data-test="error"]' but did not.</msg>
+<msg time="2025-04-04T11:26:44.811390" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-04T11:26:44.811613" level="FAIL">Page should have contained element 'css:[data-test="error"]' but did not.</msg>
 <arg>${ERROR_MESSAGE}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="FAIL" start="2025-03-25T22:28:40.974760" elapsed="0.170165">Page should have contained element 'css:[data-test="error"]' but did not.</status>
+<status status="FAIL" start="2025-04-04T11:26:44.646760" elapsed="0.167684">Page should have contained element 'css:[data-test="error"]' but did not.</status>
 </kw>
-<msg time="2025-03-25T22:28:41.145082" level="INFO">${error_visible} = False</msg>
+<msg time="2025-04-04T11:26:44.814606" level="INFO">${error_visible} = False</msg>
 <var>${error_visible}</var>
 <arg>Page Should Contain Element</arg>
 <arg>${ERROR_MESSAGE}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-03-25T22:28:40.974235" elapsed="0.170882"/>
+<status status="PASS" start="2025-04-04T11:26:44.646298" elapsed="0.168344"/>
 </kw>
 <if>
 <branch type="IF" condition="${error_visible}">
 <kw name="Get Error Message" owner="checkout_page">
 <var>${error_text}</var>
 <doc>Gets the error message from the checkout page</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.145537" elapsed="0.000045"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.815094" elapsed="0.000049"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Error encountered: ${error_text}</arg>
 <arg>level=WARN</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.145723" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.815299" elapsed="0.000034"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not continue to overview: ${error_text}</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.145865" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.815449" elapsed="0.000030"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.145230" elapsed="0.000709"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.814768" elapsed="0.000755"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.145202" elapsed="0.000780"/>
+<status status="PASS" start="2025-04-04T11:26:44.814733" elapsed="0.000837"/>
 </if>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${CHECKOUT_STEP_TWO_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.146081" elapsed="0.005590"/>
+<status status="PASS" start="2025-04-04T11:26:44.815678" elapsed="0.007376"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.152054" level="INFO">Continued to checkout overview successfully</msg>
+<msg time="2025-04-04T11:26:44.823631" level="INFO">Continued to checkout overview successfully</msg>
 <arg>Continued to checkout overview successfully</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.151885" elapsed="0.000228"/>
+<status status="PASS" start="2025-04-04T11:26:44.823358" elapsed="0.000378"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:40.880510" elapsed="0.271658"/>
+<status status="PASS" start="2025-04-04T11:26:44.532374" elapsed="0.291501"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.152404" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.824331" elapsed="0.000068"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to continue to checkout overview</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.152546" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.824848" elapsed="0.000110"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not continue to checkout overview</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.152683" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.825250" elapsed="0.000080"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.152252" elapsed="0.000503"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.824009" elapsed="0.001422"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:40.880471" elapsed="0.272334"/>
+<status status="PASS" start="2025-04-04T11:26:44.532327" elapsed="0.293216"/>
 </try>
 <doc>Clicks the continue button to proceed to checkout overview</doc>
-<status status="PASS" start="2025-03-25T22:28:40.880215" elapsed="0.272656"/>
+<status status="PASS" start="2025-04-04T11:26:44.532109" elapsed="0.293573"/>
 </kw>
 <kw name="Verify Product In Overview" owner="checkout_page">
 <try>
@@ -786,133 +786,133 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>xpath://div[text()='${product_name}']</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.153745" elapsed="0.022956"/>
+<status status="PASS" start="2025-04-04T11:26:44.827225" elapsed="0.023034"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.186230" level="INFO">Current page contains element 'xpath://div[text()='Sauce Labs Backpack']'.</msg>
+<msg time="2025-04-04T11:26:44.858946" level="INFO">Current page contains element 'xpath://div[text()='Sauce Labs Backpack']'.</msg>
 <arg>xpath://div[text()='${product_name}']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.176918" elapsed="0.009488"/>
+<status status="PASS" start="2025-04-04T11:26:44.850467" elapsed="0.008595"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.187135" level="INFO">Product "Sauce Labs Backpack" is in checkout overview</msg>
+<msg time="2025-04-04T11:26:44.859742" level="INFO">Product "Sauce Labs Backpack" is in checkout overview</msg>
 <arg>Product "${product_name}" is in checkout overview</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.186765" elapsed="0.000475"/>
+<status status="PASS" start="2025-04-04T11:26:44.859281" elapsed="0.000555"/>
 </kw>
 <return>
 <value>${TRUE}</value>
-<status status="PASS" start="2025-03-25T22:28:41.187403" elapsed="0.000096"/>
+<status status="PASS" start="2025-04-04T11:26:44.859990" elapsed="0.000142"/>
 </return>
-<status status="PASS" start="2025-03-25T22:28:41.153631" elapsed="0.033974"/>
+<status status="PASS" start="2025-04-04T11:26:44.827058" elapsed="0.033232"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.187996" elapsed="0.000070"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.860717" elapsed="0.000037"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Product "${product_name}" not found in checkout overview</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.188351" elapsed="0.000056"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.860868" elapsed="0.000031"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Product not found in checkout overview</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.188832" elapsed="0.000202"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.861007" elapsed="0.000030"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.187730" elapsed="0.001497"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.860423" elapsed="0.000663"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.153594" elapsed="0.035890"/>
+<status status="PASS" start="2025-04-04T11:26:44.827010" elapsed="0.034130"/>
 </try>
 <arg>${TEST_PRODUCT}</arg>
 <doc>Verifies a specific product is present in the checkout overview</doc>
-<status status="PASS" start="2025-03-25T22:28:41.153339" elapsed="0.036723"/>
+<status status="PASS" start="2025-04-04T11:26:44.826502" elapsed="0.034760"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.190810" level="INFO">${expected_price} = 29.99</msg>
+<msg time="2025-04-04T11:26:44.862176" level="INFO">${expected_price} = 29.99</msg>
 <var>${expected_price}</var>
 <arg>${product}[price]</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.190459" elapsed="0.000391"/>
+<status status="PASS" start="2025-04-04T11:26:44.861857" elapsed="0.000359"/>
 </kw>
 <kw name="Verify Product Price In Overview" owner="checkout_page">
 <try>
 <branch type="TRY">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.191902" level="INFO">${element} = xpath://div[text()='Sauce Labs Backpack']/ancestor::div[contains(@class,'cart_item')]//div[@class='inventory_item_price']</msg>
+<msg time="2025-04-04T11:26:44.863366" level="INFO">${element} = xpath://div[text()='Sauce Labs Backpack']/ancestor::div[contains(@class,'cart_item')]//div[@class='inventory_item_price']</msg>
 <var>${element}</var>
 <arg>xpath://div[text()='${product_name}']/ancestor::div[contains(@class,'cart_item')]//div[@class='inventory_item_price']</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.191707" elapsed="0.000232"/>
+<status status="PASS" start="2025-04-04T11:26:44.863160" elapsed="0.000244"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.192165" elapsed="0.019424"/>
+<status status="PASS" start="2025-04-04T11:26:44.863633" elapsed="0.020638"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.229056" level="INFO">${price_text} = $29.99</msg>
+<msg time="2025-04-04T11:26:44.903031" level="INFO">${price_text} = $29.99</msg>
 <var>${price_text}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.211876" elapsed="0.017230"/>
+<status status="PASS" start="2025-04-04T11:26:44.884499" elapsed="0.018581"/>
 </kw>
 <kw name="Replace String" owner="String">
-<msg time="2025-03-25T22:28:41.230109" level="INFO">${price} = 29.99</msg>
+<msg time="2025-04-04T11:26:44.904114" level="INFO">${price} = 29.99</msg>
 <var>${price}</var>
 <arg>${price_text}</arg>
 <arg>$</arg>
 <arg>${EMPTY}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.229286" elapsed="0.000859"/>
+<status status="PASS" start="2025-04-04T11:26:44.903263" elapsed="0.000886"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${price}</arg>
 <arg>${expected_price}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.230294" elapsed="0.000196"/>
+<status status="PASS" start="2025-04-04T11:26:44.904285" elapsed="0.000197"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.230935" level="INFO">Product "Sauce Labs Backpack" price verified: $29.99</msg>
+<msg time="2025-04-04T11:26:44.904780" level="INFO">Product "Sauce Labs Backpack" price verified: $29.99</msg>
 <arg>Product "${product_name}" price verified: $${price}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.230667" elapsed="0.000329"/>
+<status status="PASS" start="2025-04-04T11:26:44.904607" elapsed="0.000224"/>
 </kw>
 <return>
 <value>${TRUE}</value>
-<status status="PASS" start="2025-03-25T22:28:41.231066" elapsed="0.000057"/>
+<status status="PASS" start="2025-04-04T11:26:44.904897" elapsed="0.000047"/>
 </return>
-<status status="PASS" start="2025-03-25T22:28:41.191584" elapsed="0.039595"/>
+<status status="PASS" start="2025-04-04T11:26:44.863032" elapsed="0.041966"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.231391" elapsed="0.000051"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.905176" elapsed="0.000033"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to verify price for product "${product_name}" in overview</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.231586" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.905318" elapsed="0.000030"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Product price verification failed</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.231736" elapsed="0.000030"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.905456" elapsed="0.000029"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.231242" elapsed="0.000568"/>
+<status status="NOT RUN" start="2025-04-04T11:26:44.905058" elapsed="0.000470"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.191547" elapsed="0.040322"/>
+<status status="PASS" start="2025-04-04T11:26:44.862996" elapsed="0.042582"/>
 </try>
 <arg>${TEST_PRODUCT}</arg>
 <arg>${expected_price}</arg>
 <doc>Verifies the price of a product in the checkout overview</doc>
-<status status="PASS" start="2025-03-25T22:28:41.191255" elapsed="0.040744"/>
+<status status="PASS" start="2025-04-04T11:26:44.862683" elapsed="0.042993"/>
 </kw>
 <kw name="Finish Checkout" owner="checkout_page">
 <try>
@@ -921,51 +921,51 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${FINISH_BUTTON}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.233268" elapsed="0.019527"/>
+<status status="PASS" start="2025-04-04T11:26:44.906858" elapsed="0.023848"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.253283" level="INFO">Clicking element 'css:[data-test="finish"]'.</msg>
+<msg time="2025-04-04T11:26:44.931229" level="INFO">Clicking element 'css:[data-test="finish"]'.</msg>
 <arg>${FINISH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.253018" elapsed="0.096822"/>
+<status status="PASS" start="2025-04-04T11:26:44.930946" elapsed="0.084820"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${CHECKOUT_COMPLETE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.350234" elapsed="0.011878"/>
+<status status="PASS" start="2025-04-04T11:26:45.016148" elapsed="0.008160"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.362577" level="INFO">Checkout completed successfully</msg>
+<msg time="2025-04-04T11:26:45.024676" level="INFO">Checkout completed successfully</msg>
 <arg>Checkout completed successfully</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.362359" elapsed="0.000290"/>
+<status status="PASS" start="2025-04-04T11:26:45.024513" elapsed="0.000217"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:41.233138" elapsed="0.129579"/>
+<status status="PASS" start="2025-04-04T11:26:44.906742" elapsed="0.118054"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.362929" elapsed="0.000035"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.025227" elapsed="0.000076"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to finish checkout</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.363085" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.025593" elapsed="0.000086"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not finish checkout</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.363237" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.026040" elapsed="0.000082"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.362790" elapsed="0.000528"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.024932" elapsed="0.001322"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.233100" elapsed="0.130275"/>
+<status status="PASS" start="2025-04-04T11:26:44.906709" elapsed="0.119749"/>
 </try>
 <doc>Clicks the finish button to complete the purchase</doc>
-<status status="PASS" start="2025-03-25T22:28:41.232873" elapsed="0.130571"/>
+<status status="PASS" start="2025-04-04T11:26:44.906518" elapsed="0.120276"/>
 </kw>
 <kw name="Verify Order Complete" owner="checkout_page">
 <try>
@@ -974,81 +974,81 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${CHECKOUT_COMPLETE_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.364447" elapsed="0.010229"/>
+<status status="PASS" start="2025-04-04T11:26:45.028478" elapsed="0.006200"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.528001" level="INFO">Current page contains element 'xpath://span[text()='Checkout: Complete!']'.</msg>
+<msg time="2025-04-04T11:26:45.047896" level="INFO">Current page contains element 'xpath://span[text()='Checkout: Complete!']'.</msg>
 <arg>xpath://span[text()='Checkout: Complete!']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.375105" elapsed="0.153074"/>
+<status status="PASS" start="2025-04-04T11:26:45.034883" elapsed="0.013105"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.664875" level="INFO">Current page contains element 'css:.complete-header'.</msg>
+<msg time="2025-04-04T11:26:45.060108" level="INFO">Current page contains element 'css:.complete-header'.</msg>
 <arg>${COMPLETE_HEADER}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.528581" elapsed="0.136568"/>
+<status status="PASS" start="2025-04-04T11:26:45.048180" elapsed="0.012111"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.681962" level="INFO">Current page contains element 'css:.complete-text'.</msg>
+<msg time="2025-04-04T11:26:45.071673" level="INFO">Current page contains element 'css:.complete-text'.</msg>
 <arg>${COMPLETE_TEXT}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.665685" elapsed="0.016420"/>
+<status status="PASS" start="2025-04-04T11:26:45.060589" elapsed="0.011182"/>
 </kw>
 <kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.695848" level="INFO">Current page contains element 'css:.pony_express'.</msg>
+<msg time="2025-04-04T11:26:45.083684" level="INFO">Current page contains element 'css:.pony_express'.</msg>
 <arg>${COMPLETE_IMAGE}</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.682386" elapsed="0.013584"/>
+<status status="PASS" start="2025-04-04T11:26:45.071953" elapsed="0.011848"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.713095" level="INFO">${header} = Thank you for your order!</msg>
+<msg time="2025-04-04T11:26:45.102056" level="INFO">${header} = Thank you for your order!</msg>
 <var>${header}</var>
 <arg>${COMPLETE_HEADER}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.696220" elapsed="0.016974"/>
+<status status="PASS" start="2025-04-04T11:26:45.083985" elapsed="0.018120"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${header}</arg>
 <arg>THANK YOU</arg>
 <arg>ignore_case=True</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.713687" elapsed="0.000533"/>
+<status status="PASS" start="2025-04-04T11:26:45.102288" elapsed="0.000233"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.715012" level="INFO">Order completion verified: "Thank you for your order!"</msg>
+<msg time="2025-04-04T11:26:45.102825" level="INFO">Order completion verified: "Thank you for your order!"</msg>
 <arg>Order completion verified: "${header}"</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.714634" elapsed="0.000712"/>
+<status status="PASS" start="2025-04-04T11:26:45.102667" elapsed="0.000317"/>
 </kw>
 <return>
 <value>${TRUE}</value>
-<status status="PASS" start="2025-03-25T22:28:41.715509" elapsed="0.000128"/>
+<status status="PASS" start="2025-04-04T11:26:45.103057" elapsed="0.000048"/>
 </return>
-<status status="PASS" start="2025-03-25T22:28:41.364313" elapsed="0.351431"/>
+<status status="PASS" start="2025-04-04T11:26:45.028337" elapsed="0.074820"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.716217" elapsed="0.000063"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.103355" elapsed="0.000031"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to verify order completion</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.716540" elapsed="0.000061"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.103493" elapsed="0.000029"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Order completion verification failed</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.716815" elapsed="0.000061"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.103626" elapsed="0.000029"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.715876" elapsed="0.001094"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.103240" elapsed="0.000458"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.364272" elapsed="0.352811"/>
+<status status="PASS" start="2025-04-04T11:26:45.028298" elapsed="0.075449"/>
 </try>
 <doc>Verifies the order completion page is displayed with success message</doc>
-<status status="PASS" start="2025-03-25T22:28:41.364008" elapsed="0.353382"/>
+<status status="PASS" start="2025-04-04T11:26:45.028029" elapsed="0.075817"/>
 </kw>
 <kw name="Back Home" owner="checkout_page">
 <try>
@@ -1057,67 +1057,67 @@ Returns 0 if the cart is empty (badge not visible).</doc>
 <arg>${BACK_HOME_BUTTON}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.722855" elapsed="0.026551"/>
+<status status="PASS" start="2025-04-04T11:26:45.104581" elapsed="0.021226"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-25T22:28:41.749996" level="INFO">Clicking element 'css:[data-test="back-to-products"]'.</msg>
+<msg time="2025-04-04T11:26:45.126440" level="INFO">Clicking element 'css:[data-test="back-to-products"]'.</msg>
 <arg>${BACK_HOME_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.749714" elapsed="0.096236"/>
+<status status="PASS" start="2025-04-04T11:26:45.126154" elapsed="0.077331"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
 <arg>${INVENTORY_URL}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.846574" elapsed="0.010107"/>
+<status status="PASS" start="2025-04-04T11:26:45.203713" elapsed="0.009862"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-25T22:28:41.857090" level="INFO">Returned to home page</msg>
+<msg time="2025-04-04T11:26:45.214105" level="INFO">Returned to home page</msg>
 <arg>Returned to home page</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.856903" elapsed="0.000263"/>
+<status status="PASS" start="2025-04-04T11:26:45.213822" elapsed="0.000358"/>
 </kw>
-<status status="PASS" start="2025-03-25T22:28:41.722508" elapsed="0.134740"/>
+<status status="PASS" start="2025-04-04T11:26:45.104473" elapsed="0.109784"/>
 </branch>
 <branch type="EXCEPT">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.857501" elapsed="0.000061"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.214558" elapsed="0.000049"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>Failed to return to home page</arg>
 <arg>level=ERROR</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.857844" elapsed="0.000065"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.214979" elapsed="0.000087"/>
 </kw>
 <kw name="Fail" owner="BuiltIn">
 <arg>Could not return to home page</arg>
 <doc>Fails the test with the given message and optionally alters its tags.</doc>
-<status status="NOT RUN" start="2025-03-25T22:28:41.858114" elapsed="0.000083"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.215367" elapsed="0.000077"/>
 </kw>
-<status status="NOT RUN" start="2025-03-25T22:28:41.857328" elapsed="0.000975"/>
+<status status="NOT RUN" start="2025-04-04T11:26:45.214341" elapsed="0.001194"/>
 </branch>
-<status status="PASS" start="2025-03-25T22:28:41.722416" elapsed="0.135961"/>
+<status status="PASS" start="2025-04-04T11:26:45.104442" elapsed="0.111290"/>
 </try>
 <doc>Clicks the back home button to return to inventory</doc>
-<status status="PASS" start="2025-03-25T22:28:41.721796" elapsed="0.136677"/>
+<status status="PASS" start="2025-04-04T11:26:45.104249" elapsed="0.111699"/>
 </kw>
 <kw name="End Test" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-25T22:28:41.859709" elapsed="2.226026"/>
+<status status="PASS" start="2025-04-04T11:26:45.217436" elapsed="2.225397"/>
 </kw>
 <doc>Test teardown - closes the browser</doc>
-<status status="PASS" start="2025-03-25T22:28:41.859158" elapsed="2.226818"/>
+<status status="PASS" start="2025-04-04T11:26:45.216942" elapsed="2.226021"/>
 </kw>
 <doc>Tests the complete purchase flow from product selection to checkout</doc>
-<status status="PASS" start="2025-03-25T22:28:36.990310" elapsed="7.095967"/>
+<status status="PASS" start="2025-04-04T11:26:41.047784" elapsed="6.395473"/>
 </test>
 <doc>Complete Purchase End-to-End Test
 Tests the full purchase flow from login to checkout completion
 using structured test data.</doc>
-<status status="PASS" start="2025-03-25T22:28:36.340342" elapsed="7.748064"/>
+<status status="PASS" start="2025-04-04T11:26:40.486730" elapsed="6.957916"/>
 </suite>
 <statistics>
 <total>
@@ -1130,6 +1130,10 @@ using structured test data.</doc>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-25T22:28:37.471961" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.165); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-04-04T11:26:40.536029" level="WARN">Error in file 'C:\Users\Administrator\.cursor\tests\saucedemo-automation\resources\common.robot' on line 112: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-04-04T11:26:40.536512" level="WARN">Error in file 'C:\Users\Administrator\.cursor\tests\saucedemo-automation\resources\common.robot' on line 118: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-04-04T11:26:40.536995" level="WARN">Error in file 'C:\Users\Administrator\.cursor\tests\saucedemo-automation\resources\common.robot' on line 133: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-04-04T11:26:40.537875" level="WARN">Error in file 'C:\Users\Administrator\.cursor\tests\saucedemo-automation\resources\common.robot' on line 170: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-04-04T11:26:41.466963" level="WARN">The chromedriver version (133.0.6943.53) detected in PATH at C:\Users\Administrator\Documents\webdrivers\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.178); currently, chromedriver 134.0.6998.165 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

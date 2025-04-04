@@ -8,6 +8,7 @@ It integrates with the TestDataManager to offer structured data access within Ro
 import os
 import sys
 import logging
+from typing import Optional, List, Dict, Any, Union
 from robot.api import logger as robot_logger
 
 # Add parent directory to system path to find utils package
@@ -25,12 +26,12 @@ class TestDataLib:
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
     ROBOT_LIBRARY_DOC_FORMAT = 'reST'
     
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize the TestDataLib with TestDataManager instance."""
         self.data_manager = TestDataManager()
         robot_logger.info("TestDataLib initialized")
         
-    def get_product_id_by_name(self, product_name):
+    def get_product_id_by_name(self, product_name: str) -> Optional[str]:
         """
         Get product ID by name.
         
@@ -49,7 +50,7 @@ class TestDataLib:
         robot_logger.warn(f"Product not found: {product_name}")
         return None
         
-    def get_product_price(self, product_identifier):
+    def get_product_price(self, product_identifier: str) -> Optional[float]:
         """
         Get product price by name or ID.
         
@@ -75,7 +76,7 @@ class TestDataLib:
         robot_logger.warn(f"Product not found: {product_identifier}")
         return None
         
-    def get_expected_sort_order(self, sort_type):
+    def get_expected_sort_order(self, sort_type: str) -> List[str]:
         """
         Get expected product order after sorting.
         
@@ -91,7 +92,7 @@ class TestDataLib:
         """
         return self.data_manager.get_expected_sort_order(sort_type)
         
-    def product_should_be_in_department(self, product_name, department):
+    def product_should_be_in_department(self, product_name: str, department: str) -> bool:
         """
         Verify product is in expected department.
         
@@ -117,7 +118,7 @@ class TestDataLib:
             )
         return True
         
-    def get_products_with_tag(self, tag):
+    def get_products_with_tag(self, tag: str) -> List[str]:
         """
         Get list of products with specific tag.
         
@@ -133,7 +134,7 @@ class TestDataLib:
         products = self.data_manager.get_products_by_tag(tag)
         return [p.get('name') for p in products]
         
-    def get_user_expectations(self, user_type):
+    def get_user_expectations(self, user_type: str) -> Dict[str, Any]:
         """
         Get expected behaviors for user type.
         
@@ -149,7 +150,7 @@ class TestDataLib:
         """
         return self.data_manager.get_user_expectations(user_type)
         
-    def user_should_be_able_to_checkout(self, user_type):
+    def user_should_be_able_to_checkout(self, user_type: str) -> bool:
         """
         Verify if user type should be able to checkout.
         
@@ -171,7 +172,7 @@ class TestDataLib:
             raise AssertionError(f"User '{user_type}' is not expected to be able to checkout")
         return True
         
-    def get_all_product_names(self):
+    def get_all_product_names(self) -> List[str]:
         """
         Get list of all product names.
         
@@ -184,7 +185,7 @@ class TestDataLib:
         products = self.data_manager.get_all_products()
         return [p.get('name') for p in products]
         
-    def get_product_data(self, product_name, field=None):
+    def get_product_data(self, product_name: str, field: Optional[str] = None) -> Union[Dict[str, Any], Any, None]:
         """
         Get product data by name.
         

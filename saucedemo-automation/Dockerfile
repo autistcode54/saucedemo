@@ -26,5 +26,8 @@ COPY . .
 # Set display port to avoid crash
 ENV DISPLAY=:99
 
+# Create output directory
+RUN mkdir -p output
+
 # Command to run tests
-CMD ["robot", "--outputdir", "results", "tests/"]
+CMD ["robot", "--outputdir", "output", "--log", "log.html", "--report", "report.html", "--output", "output.xml", "tests/"]

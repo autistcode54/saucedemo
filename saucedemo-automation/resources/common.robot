@@ -1,4 +1,24 @@
+*** Settings ***
+Documentation     Common configuration for all test suites
+...               Defines common resources and variables.
+
+# Variables
+Resource          pages/common_variables.robot
+
+*** Variables ***
+# Output Configuration - These will be used with command line options
+${OUTPUT_DIR}     ${EXECDIR}/output
+${REPORT_NAME}    report.html
+${LOG_NAME}       log.html
+${LOG_LEVEL}      INFO
+${SCREENSHOT_DIR}     ${EXECDIR}/output/screenshots
+
 *** Keywords ***
+Setup Output Directory
+    [Documentation]    Creates output directory if it doesn't exist
+    Create Directory    ${OUTPUT_DIR}
+    Create Directory    ${SCREENSHOT_DIR}
+
 #-----------------------------
 # Enhanced Element Interactions
 #-----------------------------

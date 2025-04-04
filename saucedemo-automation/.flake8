@@ -1,0 +1,111 @@
+# Flake8 Configuration File
+# ---------------------------
+# This file configures the Flake8 Python linter which enforces coding style and quality checks.
+# Flake8 combines PyFlakes (static analysis), pycodestyle (PEP 8 style guide), and McCabe 
+# (code complexity) to provide a comprehensive linting solution for Python code.
+# 
+# This configuration:
+# 1. Sets code style requirements (line length, whitespace)
+# 2. Specifies which files to exclude from linting
+# 3. Defines complexity thresholds to prevent overly complex code
+# 4. Configures file-specific exceptions where appropriate
+#
+# See: https://flake8.pycqa.org/en/latest/user/configuration.html
+#
+[flake8]
+# Maximum allowed line length (100 characters instead of default 79)
+max-line-length = 100
+# Directories and files to exclude from linting
+exclude = .git,__pycache__,build,dist
+# Error codes to ignore:
+# E203 - Whitespace before ':' (conflicts with Black formatter)
+# W503 - Line break before binary operator (conflicts with Black formatter)
+ignore = E203, W503
+# File-specific ignores:
+per-file-ignores =
+    __init__.py:F401  # Ignore unused imports in __init__.py files
+    tests/*:D1        # Ignore missing docstrings in test files
+
+# Maximum complexity allowed for functions (default is 10)
+max-complexity = 10
+
+# Maximum number of blank lines allowed between top-level functions and classes
+max-blank-lines = 2
+
+# Maximum number of statements allowed in a function
+max-statements = 50
+
+# Maximum number of arguments allowed in a function
+max-args = 5
+
+# Maximum number of local variables allowed in a function
+max-locals = 15
+
+# Maximum number of branches allowed in a function
+max-branches = 12
+
+# Maximum number of return statements allowed in a function
+max-returns = 6
+
+# Maximum number of parents allowed in a class
+max-parents = 7
+
+# Maximum number of attributes allowed in a class
+max-attributes = 7
+
+# Maximum number of public methods allowed in a class
+max-public-methods = 20
+
+# Maximum number of lines allowed in a module
+max-module-lines = 1000
+
+# Maximum number of lines allowed in a class
+max-class-lines = 500
+
+# Maximum number of lines allowed in a function
+max-function-lines = 50
+
+# Maximum number of lines allowed in a method
+max-method-lines = 40
+
+# Maximum number of lines allowed in a block
+max-block-lines = 50
+
+# Maximum number of lines allowed in a branch
+max-branch-lines = 50
+
+# Maximum number of lines allowed in a loop
+max-loop-lines = 50
+
+# Maximum number of lines allowed in a try block
+max-try-lines = 50
+
+# Maximum number of lines allowed in a except block
+max-except-lines = 50
+
+# Maximum number of lines allowed in a finally block
+max-finally-lines = 50
+
+# Maximum number of lines allowed in a with block
+max-with-lines = 50
+
+# Maximum number of lines allowed in a for block
+max-for-lines = 50
+
+# Maximum number of lines allowed in a while block
+max-while-lines = 50
+
+# Maximum number of lines allowed in a if block
+max-if-lines = 50
+
+# Maximum number of lines allowed in a elif block
+max-elif-lines = 50
+
+# Maximum number of lines allowed in a else block
+max-else-lines = 50
+
+# Maximum number of lines allowed in a def block
+max-def-lines = 50
+
+# Maximum number of lines allowed in a class block
+max-class-lines = 50 

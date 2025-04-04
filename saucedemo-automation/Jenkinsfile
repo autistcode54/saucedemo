@@ -1,31 +1,100 @@
-// Set build triggers - run at 6am and 8pm, plus on code pushes, PRs, and merges
-triggers {
-    // Scheduled runs at 6am and 8pm
-    cron('0 6,20 * * *')
-    
-    // Run on code pushes
-    githubPush()
-    
-    // Run on pull requests
-    pullRequest {
-        events: ['OPEN', 'REOPENED', 'UPDATED']
-        triggerPhrase('run tests')
-        branchFilterType('PR_DESTINATION_BRANCH')
-        includedBranches(['main', 'develop', 'release/*'])
+pipeline {
+    agent {
+        docker {
+            image 'python:3.9-slim'
+            args '-v $HOME/.cache/pip:/root/.cache/pip'
+        }
     }
     
-    // Run on merges to important branches
-    upstream(upstreamProjects: '', threshold: hudson.model.Result.SUCCESS)
-    GenericTrigger {
-        genericVariables {
-            [
-                [key: 'ref', value: '$.ref']
-            ]
+    triggers {
+        // Scheduled runs at 6am and 8pm
+        cron('0 6,20 * * *')
+        
+        // Run on code pushes
+        githubPush()
+        
+        // Run on pull requests
+        pullRequest {
+            events(['OPEN', 'REOPENED', 'UPDATED'])
+            triggerPhrase('run tests')
+            branchFilterType('PR_DESTINATION_BRANCH')
+            includedBranches(['main', 'develop', 'release/*'])
         }
-        causeString: 'Triggered by merge to branch $ref'
-        token: 'merge-trigger-token'
-        regexpFilterExpression: '^refs/heads/(main|develop|release/.*)$'
-        regexpFilterText: '$ref'
+        
+        // Run on merges to important branches
+        upstream(upstreamProjects: '', threshold: hudson.model.Result.SUCCESS)
+        GenericTrigger {
+            genericVariables {
+                [
+                    [key: 'ref', value: '$.ref']
+                ]
+            }
+            causeString: 'Triggered by merge to branch $ref'
+            token: 'merge-trigger-token'
+            regexpFilterExpression: '^refs/heads/(main|develop|release/.*)$'
+            regexpFilterText: '$ref'
+        }
+    }
+    
+    environment {
+        BROWSER = 'headlesschrome'
+    }
+    
+    stages {
+        stage('Setup') {
+            steps {
+                sh 'python -V'
+                sh 'python -m pip install --upgrade pip'
+                sh 'pip install -r requirements.txt'
+                sh 'mkdir -p output'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'robot --outputdir output --output output.xml --log log.html --report report.html --variable BROWSER:$BROWSER tests/'
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'output/**/*', fingerprint: true
+                    junit 'output/output.xml'
+                }
+            }
+        }
+        
+        stage('Report') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Generating reports...'
+                sh 'python -m robot.rebot --outputdir output --output output.xml --log log.html --report report.html output/output.xml'
+            }
+            post {
+                always {
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'output',
+                        reportFiles: 'report.html,log.html',
+                        reportName: 'Robot Framework Test Report',
+                        reportTitles: 'Report,Log'
+                    ])
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Tests completed successfully!'
+        }
+        failure {
+            echo 'Tests failed. Check the logs for details.'
+        }
+        always {
+            cleanWs()
+        }
     }
 }
-// ... existing code ...

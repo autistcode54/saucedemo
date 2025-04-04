@@ -3,6 +3,7 @@ Documentation     Complete Purchase End-to-End Test
 ...               Tests the full purchase flow from login to checkout completion
 ...               using structured test data.
 
+Resource          ../../resources/common.robot
 Resource          ../../resources/pages/login_page.robot
 Resource          ../../resources/pages/inventory_page.robot
 Resource          ../../resources/pages/cart_page.robot
@@ -11,6 +12,12 @@ Library           ../../libraries/TestDataLib.py
 
 Test Setup        Begin Test
 Test Teardown     End Test
+
+# Remove old output configuration
+# Output Directory  ${EXECDIR}/output
+# Log Level         INFO
+# Suite Setup       Set Log Level    INFO
+# Suite Teardown    Run Keyword If All Tests Passed    Log    All tests passed successfully    level=INFO
 
 *** Variables ***
 ${TEST_USER}      standard_user

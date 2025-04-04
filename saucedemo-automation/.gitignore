@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Robot Framework
+output/
+output.xml
+report.html
+log.html
+selenium-screenshot-*.png
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment and sensitive files
+.env
+.env.*
+!.env.example 

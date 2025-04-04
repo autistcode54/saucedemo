@@ -1,42 +1,78 @@
+# GitLab CI/CD Configuration File
+# ---------------------------
+# This file defines the Continuous Integration/Continuous Deployment pipeline for the SauceDemo automation project.
+# 
+# Purpose:
+# - Automatically run tests when changes are pushed to the repository
+# - Generate and store test reports for review
+# - Provide feedback on code quality and test results
+# - Deploy changes to the appropriate environment when approved
+# 
+# The pipeline consists of two main stages:
+# 1. Test stage: Runs Robot Framework tests against the SauceDemo application
+# 2. Report stage: Generates comprehensive test reports from the results
+# 
+# These automated tests ensure that the SauceDemo website functions correctly
+# across various browsers and user scenarios.
+#
+# See: https://docs.gitlab.com/ee/ci/yaml/
+#
+
+# Base Docker image to use for all jobs in the pipeline
 image: python:3.9
 
+# Global variables available to all jobs
 variables:
-  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.pip-cache"  # Custom directory for pip cache to improve build speed
+  BROWSER: "headlesschrome"                    # Default browser for UI tests (Chrome in headless mode)
 
+# Cache configuration to speed up subsequent pipeline runs
 cache:
   paths:
-    - .pip-cache
-    - venv/
+    - .pip-cache   # Cache pip packages
+    - venv/        # Cache virtual environment
 
+# Commands that run before every job
 before_script:
-  - python -V
-  - python -m venv venv
-  - source venv/bin/activate
-  - pip install -r requirements.txt
+  - python -V                    # Print Python version for debugging
+  - python -m venv venv          # Create a virtual environment
+  - source venv/bin/activate     # Activate the virtual environment
+  - pip install -r requirements.txt  # Install dependencies
+  - mkdir -p output              # Create output directory for test results
 
+# Define pipeline stages in order of execution
 stages:
-  - test
-  - report
+  - test     # First stage: Run tests
+  - report   # Second stage: Generate reports
 
+# Test job definition
 test:
-  stage: test
+  stage: test   # This job runs in the test stage
   script:
-    - robot --outputdir output --output output.xml --log log.html --report report.html tests/
+    # Run Robot Framework tests with specified output formats and browser variable
+    - robot --outputdir output --output output.xml --log log.html --report report.html --variable BROWSER:${BROWSER} tests/
   artifacts:
-    when: always
+    when: always   # Save artifacts even if the job fails
     paths:
-      - output/
-    expire_in: 1 week
+      - output/    # Save all test results in the output directory
+    expire_in: 1 week  # Keep artifacts for one week
 
+# Report generation job definition
 report:
-  stage: report
+  stage: report    # This job runs in the report stage
+  needs: 
+    - test         # This job depends on the test job completing first
   script:
     - echo "Generating test report..."
+    # Reprocess test results to create comprehensive reports
+    - python -m robot.rebot --outputdir output --output output.xml --log log.html --report report.html output/output.xml
   artifacts:
-    when: always
+    when: always    # Save artifacts even if the job fails
     paths:
-      - output/
-    expire_in: 1 week
+      - output/     # Save all reports in the output directory
+    reports:
+      junit: output/output.xml  # Integrate with GitLab's test reporting feature
+    expire_in: 1 week   # Keep artifacts for one week
   only:
-    - main
-    - develop
+    - main           # Only run this job on the main branch
+    - develop        # Also run this job on the develop branch
