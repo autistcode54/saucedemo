@@ -3,9 +3,7 @@
 ## Overview
 
 <<<<<<< HEAD
-This repository contains an end-to-end automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application. The framework is built using Robot Framework and Python, with a focus on maintainability, reusability, and data-driven testing. Used with Cursor - model Claude Sonnet 3.7.
-=======
-This repository contains an end-to-end automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application. The framework is built using Robot Framework and Python, with a focus on maintainability, reusability, and data-driven testing. AI used in this project VSCode Copilot + Cursor with Deepseek r1 and Claude for debugging + Gemini 2.0. About 35 % time saved with AI.
+This repository contains an end-to-end automation framework for testing the [SauceDemo](https://www.saucedemo.com/) web application. The framework is built using Robot Framework and Python, with a focus on maintainability, reusability, and data-driven testing. AI used in this project is Cursor with model Claude Sonnet 3.7. About 35 % time saved.
 Also for the purpose of this demo, I have used simpler security for maintaining credentials, for production, I would use some kind of encryption based on the company strategy.
 >>>>>>> 76f1e6508b53cf64b907456f6d61bb53af2f72f0
 
